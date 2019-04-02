@@ -1,0 +1,27 @@
+安装react-native-cli
+1. react-native init AwesomeProject
+2. cd AwesomeProject
+3. react-native run-android
+热加载Hot Reloading与实时加载Live Reload的区别：
+  1. 实时加载应用更新时需要刷新当前页面，可以看到明显的全局刷新效果。
+  2. 而热加载基本上看不出刷新的效果，类似于局部刷新。
+
+调试
+1.  通过摇晃设备来打开开发菜单
+2.  热更新通过在开发菜单选择reload,或者是8081的node服务上双击rr
+3.  npm全局安装了react-devtools可以吊起，用adb映射端口，实现页面元素查看
+4.  官方推荐用snack.expo
+5.  调试工具react-native-debugger，可以看页面元素,网络请求,和redux或mobx的数据流
+引入typescript
+  全局安装包 yarn add --dev react-native-typescript-transformer typescript
+  添加rn-cli.config.js
+  添加tsconfig.json
+Expo是一套沙盒开发环境，还带有一个已上架的空应用容器。
+可以在没有原生开发平台（Xcode 或是 Android Studio）的情况下直接编写 React Native 应用
+（当然这样你只能写 js 部分代码而没法写原生代码）
+React Navigation
+  yarn add yarn add react-navigation
+  yarn add react-native-gesture-handler
+  react-native link react-native-gesture-handler
+  mainActivity.java复制代码
+  app.tsx引入使用
