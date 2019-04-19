@@ -12,6 +12,7 @@
 3.  npm全局安装了react-devtools可以吊起，用adb映射端口，实现页面元素查看
 4.  官方推荐用snack.expo
 5.  调试工具react-native-debugger，可以看页面元素,网络请求,和redux或mobx的数据流
+    exe启动,安装目录E:\InstallFiles\rn-debugger-windows-ia32
 引入typescript
   全局安装包 yarn add --dev react-native-typescript-transformer typescript
   添加rn-cli.config.js
@@ -25,3 +26,17 @@ React Navigation
   react-native link react-native-gesture-handler
   mainActivity.java复制代码
   app.tsx引入使用
+react-native-camera实现二维码
+  yarn add react-native-camera
+  react-native link react-native-camera
+
+  AndroidMainfest.xml添加权限
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+  app build.gradle的defaultConfig添加
+  {
+    missingDimensionStrategy 'react-native-camera', 'general'
+  }
+
