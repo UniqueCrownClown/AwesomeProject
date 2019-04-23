@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, StyleSheet,Text } from 'react-native';
-import TestAnimated from '../components/TestAnimated'
+import TestAnimated from '../../components/TestAnimated'
 var styles = StyleSheet.create({
   haha: {
     flex: 1,

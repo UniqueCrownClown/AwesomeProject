@@ -36,13 +36,6 @@ export default class ButtonList extends Component {
         </View>
         <View style={styles.scape}>
           <Button
-            title='toe'
-            onPress={this.redirectTo.bind(this, 'Toe')}
-            color='#5ba'
-          />
-        </View>
-        <View style={styles.scape}>
-          <Button
             title='FilmList'
             onPress={this.redirectTo.bind(this, 'FilmList')}
             color='#cba'

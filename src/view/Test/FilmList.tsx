@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Image, StyleSheet, Text, View, FlatList } from 'react-native';
-import { fetchData } from '../api';
+import { fetchData } from '../../api';
 var styles = StyleSheet.create({
   container: {
     flex: 1,
