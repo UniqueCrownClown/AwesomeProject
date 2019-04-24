@@ -19,14 +19,14 @@
   添加rn-cli.config.js
   添加tsconfig.json
   只要用到jsx的语法文件格式就必须是tsx,还需要引入import React from 'react';
-Expo是一套沙盒开发环境，还带有一个已上架的空应用容器。
+Expo是一套沙盒开发环境，还带有一个已上架的空应用容器。(万恶的墙)
 可以在没有原生开发平台（Xcode 或是 Android Studio）的情况下直接编写 React Native 应用
 （当然这样你只能写 js 部分代码而没法写原生代码）
 react Navigation
   yarn add yarn add react-navigation
   yarn add react-native-gesture-handler
   react-native link react-native-gesture-handler
-  mainActivity.java复制代码
+  mainActivity.java复制代码(按照官网)
   app.tsx引入使用
 react-native-camera实现二维码
   yarn add react-native-camera
@@ -49,6 +49,18 @@ react-native-vector-icons
     ]
     apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
   2. react-native link react-native-vector-icons
-  3. 起飞
-  添加自定义的icon文件？
+  3. 添加自定义的icon文件？
+    a. 复制iconfont的ttf文件到nodeModule到react-native-vector-icons的Fonts目录下
+    b. react-native link react-native-vector-icons,模仿Ionicons.js
+    c. 新建iconfonts.js在glyphmaps中新建iconfonts.json,模仿Ionicons.json,
+    同级新建iconfont.d.ts,模仿Ionicons.d.ts
+    d. import Myicon from 'react-native-vector-icons/iconfont';
+    <Myicon name="clock" size={30} color="#900" /> 
+    e. 生成iconfont.json的node脚本G:\webspace\clown\nodeJsFile\buildFontJson.js
+react-native-fs
+  本地文件系统访问
+关于global全局变量的注入和引用的
 
+
+样式Number数值
+  在 React-Native 中，目前仅支持 Number 这一种长度取值。默认缺省了 pt 单位

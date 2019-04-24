@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Image, StyleSheet, Text, View, FlatList } from 'react-native';
-import { fetchData } from '../../api';
 var styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -39,7 +38,7 @@ export default class FilmList extends Component {
     };
   }
   public async componentDidMount() {
-    const aaa = await fetchData();
+    const aaa = await global.http.fetchData();
     console.info(aaa);
     this.setState({ movies: aaa, loaded: true });
   }

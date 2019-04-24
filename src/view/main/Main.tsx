@@ -25,7 +25,7 @@ export default class Main extends Component {
       headerTitle: <XButton text='Main' onClick={() => { Alert.alert('啊哈哈') }} />,
       headerRight: (
         <Button
-          onPress={navigation.getParam('increaseCount')}
+          onPress={() => navigation.getParam('increaseCount')}
           title='+1'
         />
       ),

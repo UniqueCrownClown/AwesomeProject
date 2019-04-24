@@ -6,8 +6,6 @@ import {
   StyleSheet,
   TouchableOpacity,
   Dimensions,
-  Alert,
-  Button
 } from 'react-native';
 
 const styles = StyleSheet.create({
