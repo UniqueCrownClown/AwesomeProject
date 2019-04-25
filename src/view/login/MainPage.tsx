@@ -6,10 +6,11 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-import Counter from '../components/Counter';
+import Counter from './../../components/Counter';
 import { connect } from 'react-redux'; // 引入connect函数
 import { NavigationActions, StackActions } from 'react-navigation';
-import *as counterAction from '../store/actions/counterAction';
+import counterAction from './../../store/actions/counterAction';
+import { IcounterState } from '../../store/reducers/counterReducer';
 
 const resetAction = StackActions.reset({
   index: 0,
@@ -17,11 +18,15 @@ const resetAction = StackActions.reset({
     NavigationActions.navigate({ routeName: 'Login' })
   ]
 })
+declare interface MainPageProps {
+  navigation: any,
+  count, incrementFn, decrementFn
+}
+declare interface MainPageState {
 
-class MainPage extends Component {
-  public props: any;
-
-  constructor(props: any) {
+}
+class MainPage extends Component<MainPageProps, MainPageState> {
+  constructor(props: MainPageProps) {
     super(props);
   }
   static navigationOptions = {
@@ -59,7 +64,7 @@ const styles = StyleSheet.create({
 })
 
 export default connect(
-  (state) => ({
+  (state: any) => ({
     count: state.counter.count,
   }),
   (dispatch) => ({

@@ -22,6 +22,8 @@
 Expo是一套沙盒开发环境，还带有一个已上架的空应用容器。(万恶的墙)
 可以在没有原生开发平台（Xcode 或是 Android Studio）的情况下直接编写 React Native 应用
 （当然这样你只能写 js 部分代码而没法写原生代码）
+prop-types
+  
 react Navigation
   yarn add yarn add react-navigation
   yarn add react-native-gesture-handler

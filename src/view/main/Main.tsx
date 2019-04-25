@@ -5,13 +5,19 @@ import {
 import VerticalBox from '../../components/VerticalBox'
 import XButton from '../../components/Button'
 import Icon from 'react-native-vector-icons/FontAwesome';
+declare interface IMainProps {
+  navigation: any
+}
+declare interface IMainState {
+  count: number
+}
 const styles = StyleSheet.create({
   scape: {
     marginTop: 20,
     marginBottom: 20,
   },
 });
-export default class Main extends Component {
+export default class Main extends Component<IMainProps, IMainState> {
   // static navigationOptions = {
   //   title: '首页',
   // };
@@ -31,9 +37,7 @@ export default class Main extends Component {
       ),
     }
   };
-  public props: any;
-  public state: any;
-  constructor(props: any) {
+  constructor(props: IMainProps) {
     super(props);
     this.state = {
       count: 0
@@ -57,9 +61,9 @@ export default class Main extends Component {
   public render() {
     return (<View style={[{ flex: 1, backgroundColor: '#f5f5f5' }]}>
       <Text style={styles.scape}>Main类</Text>
-      <VerticalBox linkData={this.linkData1} length={this.linkData1.length} navigation={this.props.navigation} />
+      <VerticalBox linkData={this.linkData1} navigation={this.props.navigation} />
       <Text style={styles.scape}>Test类</Text>
-      <VerticalBox linkData={this.linkData2} length={this.linkData2.length} navigation={this.props.navigation} />
+      <VerticalBox linkData={this.linkData2} navigation={this.props.navigation} />
       <Button
         title="Update the title"
         onPress={() => this.props.navigation.setParams({ otherParam: 'Updated!' })}></Button>

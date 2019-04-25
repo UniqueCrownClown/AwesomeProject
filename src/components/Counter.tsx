@@ -2,9 +2,12 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet, View, Text } from 'react-native';
 import Button from './Button';
-
-export default class Counter extends Component {
-  public props: ICounterProps;
+declare interface ICounterProps {
+  decrementFn: () => void
+  incrementFn: () => void
+  counter: number
+}
+export default class Counter extends Component<ICounterProps> {
   static propTypes = {
     decrementFn: PropTypes.func.isRequired,
     incrementFn: PropTypes.func.isRequired,

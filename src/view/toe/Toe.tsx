@@ -5,6 +5,11 @@ import {
     StyleSheet,
     TouchableOpacity, Alert, Button
 } from 'react-native';
+declare interface ToeProps {
+}
+declare interface ToeState {
+    numbers: Array<any>
+}
 const styles = StyleSheet.create({
     main: {
         flex: 1,
@@ -25,16 +30,15 @@ const styles = StyleSheet.create({
         lineHeight: 80
     }
 });
-export default class Toe extends Component {
+export default class Toe extends Component<ToeProps, ToeState> {
     static navigationOptions = {
         title: 'Toe',
     };
-    public state: ToeState;
     private current: number = 0;
     private win: Array<string> = ['012', '345', '678', '036', '147', '258', '048', '246'];
     private oteam: Array<string> = [];
     private xteam: Array<string> = [];
-    constructor(props: any) {
+    constructor(props: ToeProps) {
         super(props);
         this.state = {
             numbers: []

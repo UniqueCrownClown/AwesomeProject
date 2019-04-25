@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   Dimensions,
 } from 'react-native';
-
+import PropTypes from 'prop-types';
 const styles = StyleSheet.create({
   main: {
     flex: 0,
@@ -32,17 +32,26 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   }
 });
+declare interface VerticalBoxProps {
+  linkData: Array<any>,
+  navigation: any
+}
+declare interface VerticalBoxState {
+
+}
 //3*3的格子组件
-export default class VerticalBox extends Component {
-  public props: any;
-  public state: any;
+export default class VerticalBox extends Component<VerticalBoxProps, VerticalBoxState> {
+  static propTypes = {
+    linkData: PropTypes.array.isRequired
+  }
   constructor(props: any) {
     super(props)
   }
 
   render() {
     const MainWidth = Dimensions.get('window').width;
-    const { linkData, length } = this.props;
+    const { linkData } = this.props;
+    const length = linkData.length;
     const xxxx = (length: number) => {
       let res = [];
       for (let i = 0; i < length; i++) {

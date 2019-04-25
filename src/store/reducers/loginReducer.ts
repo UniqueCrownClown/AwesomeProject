@@ -1,12 +1,24 @@
 import * as types from '../constants/loginTypes';
-
-const initialState = {
+export interface ILoginState {
+  status: string,
+  isSuccess: boolean,
+  user: null | IUser
+}
+export interface IUser {
+  name: string
+  age: number
+}
+export interface IUserAction {
+  type: string
+  user: IUser
+}
+const initialState: ILoginState = {
   status: '点击登录',
   isSuccess: false,
   user: null,
 }
 
-export default function loginIn(state = initialState, action:IUserAction) {
+export default function loginIn(state = initialState, action: IUserAction): ILoginState {
   switch (action.type) {
     case types.LOGIN_IN_DOING:
       return {

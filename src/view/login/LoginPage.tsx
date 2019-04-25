@@ -5,9 +5,9 @@ import {
   StyleSheet,
   TouchableOpacity,
 } from 'react-native';
-
-import { connect } from 'react-redux'; // 引入connect函数
-import *as loginAction from '../store/actions/loginAction';// 导入action方法
+import PropTypes from 'prop-types';
+import { connect, DispatchProp } from 'react-redux'; // 引入connect函数
+import loginAction from './../../store/actions/loginAction';// 导入action方法
 import { NavigationActions, StackActions } from 'react-navigation';
 const resetAction = StackActions.reset({
   index: 0,
@@ -15,13 +15,26 @@ const resetAction = StackActions.reset({
     NavigationActions.navigate({ routeName: 'Main' })
   ]
 })
+export interface ILoginIn {
 
-class LoginPage extends Component {
+}
+export interface LoginPageProps {
+  login: () => DispatchProp,
+  status: string,
+  navigation: any
+}
+export interface LoginPageState {
+}
+class LoginPage extends Component<LoginPageProps, LoginPageState> {
   static navigationOptions = {
     title: 'LoginPage',
   };
-  public props: any;
-
+  static propTypes = {
+    login: PropTypes.func,
+  }
+  constructor(props: LoginPageProps) {
+    super(props);
+  }
   shouldComponentUpdate(nextProps, nextState) {
     // 登录完成,切成功登录
     if (nextProps.status === '登陆成功' && nextProps.isSuccess) {
@@ -37,7 +50,7 @@ class LoginPage extends Component {
       <View style={styles.container}>
         <Text>状态: {this.props.status}
         </Text>
-        <TouchableOpacity onpress={() => login()} style={{ marginTop: 50 }}>
+        <TouchableOpacity onPress={() => login()} style={{ marginTop: 50 }}>
           <View style={styles.loginBtn}>
             <Text>登录
             </Text>
@@ -60,14 +73,27 @@ const styles = StyleSheet.create({
     padding: 5,
   }
 });
+const mapStateToProps = (state: any) => ({
+  status: state.loginIn.status,
+  isSuccess: state.loginIn.isSuccess,
+  user: state.loginIn.user,
+});
+
+const dispatchProps = (dispatch: any) => ({
+  login: () => dispatch(loginAction.login()),
+});
 
 export default connect(
-  (state) => ({
-    status: state.loginIn.status,
-    isSuccess: state.loginIn.isSuccess,
-    user: state.loginIn.user,
-  }),
-  (dispatch) => ({
-    login: () => dispatch(loginAction.login()),
-  })
+  mapStateToProps,
+  dispatchProps
 )(LoginPage)
+// export default connect(
+//   (state) => ({
+//     status: state.loginIn.status,
+//     isSuccess: state.loginIn.isSuccess,
+//     user: state.loginIn.user,
+//   }),
+//   (dispatch) => ({
+//     login: () => dispatch(loginAction.login()),
+//   })
+// )(LoginPage)

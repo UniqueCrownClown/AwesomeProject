@@ -1,5 +1,5 @@
 import axios from 'axios';
-import baseConfig from './../config/HttpBaseConfig'
+import baseConfig from '../config'
 const postWrap = async (url: string, params: URLSearchParams) => {
   try {
     console.info(JSON.stringify(params))

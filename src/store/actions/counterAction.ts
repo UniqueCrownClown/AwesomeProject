@@ -11,3 +11,8 @@ export function increment() {
     type: types.INCREMENT,
   }
 }
+
+export default {
+  decrement: decrement,
+  increment: increment
+}

@@ -7,9 +7,13 @@ import {
   Easing
 } from 'react-native';
 import RNCamera from 'react-native-camera';
-export default class ScanScreen extends Component {
-  public state: any;
-  public props: any;
+declare interface IScanScreenProps {
+  navigation: any
+}
+declare interface IScanScreenState {
+  moveAnim: any
+}
+export default class ScanScreen extends Component<IScanScreenProps, IScanScreenState> {
   public camera: any;
   constructor(props: any) {
     super(props);

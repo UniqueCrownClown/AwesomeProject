@@ -1,10 +1,15 @@
 import *as types from '../constants/counterTypes';
-
-const initialState = {
+export interface INormalAction {
+  type: string
+}
+export interface IcounterState {
+  count: number
+}
+const initialState:IcounterState = {
   count: 0,
 }
 
-export default function counter(state = initialState, action:INormalAction) {
+export default function counter(state = initialState, action: INormalAction) {
   switch (action.type) {
     case types.INCREMENT:
       return {
