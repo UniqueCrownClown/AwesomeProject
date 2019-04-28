@@ -28,9 +28,15 @@ var styles = StyleSheet.create({
     backgroundColor: '#F5FCFF',
   },
 });
-export default class FilmList extends Component {
-  public state: any;
-  constructor(props: any) {
+interface FilmListProps {
+
+}
+interface FilmListState {
+  movies: any;
+  loaded: boolean;
+}
+export default class FilmList extends Component<FilmListProps, FilmListState> {
+  constructor(props: FilmListProps) {
     super(props);
     this.state = {
       movies: null,

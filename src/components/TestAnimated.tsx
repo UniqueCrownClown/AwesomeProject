@@ -1,5 +1,5 @@
 //Animated仅封装了四个可以动画化的组件：View、Text、Image和ScrollView
-import React,{ Component, Children } from 'react';
+import React, { Component, Children } from 'react';
 import { Animated, Text, View } from 'react-native';
 declare interface AnimatedState {
   fadeAnim: any;
@@ -8,12 +8,9 @@ declare interface AnimatedProps {
   style: any;
   children: any;
 }
-export default class TestAnimated extends Component {
-  public state: AnimatedState;
-  public props: AnimatedProps;
+export default class TestAnimated extends Component<AnimatedProps, AnimatedState> {
   constructor(props: AnimatedProps) {
     super(props);
-    this.props = props;
     this.state = {
       fadeAnim: new Animated.Value(0),
     };

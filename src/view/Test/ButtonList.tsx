@@ -11,8 +11,10 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
 });
-export default class ButtonList extends Component {
-  public props: any;
+interface ButtonListProps {
+  navigation: any
+}
+export default class ButtonList extends Component<ButtonListProps> {
   constructor(props: any) {
     super(props);
   }

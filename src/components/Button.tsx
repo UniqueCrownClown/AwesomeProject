@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
-
-export default class Button extends Component {
-  public props:any;
+interface XButtonProps {
+  text: string
+  onClick: () => void
+}
+export default class Button extends Component<XButtonProps> {
+  constructor(props: XButtonProps) {
+    super(props);
+  }
   static propTypes = {
     text: PropTypes.string.isRequired,
     onClick: PropTypes.func.isRequired,

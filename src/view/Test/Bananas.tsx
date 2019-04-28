@@ -8,6 +8,9 @@ import {
   TouchableNativeFeedback,
   StyleSheet,
 } from 'react-native';
+interface BananaProps {
+
+}
 declare interface BananaState {
   text: string;
 }
@@ -21,9 +24,8 @@ const styles = StyleSheet.create({
     color: 'red',
   },
 });
-export default class Bananas extends Component {
-  public state: BananaState;
-  constructor(props: any) {
+export default class Bananas extends Component<BananaProps, BananaState> {
+  constructor(props: BananaProps) {
     super(props);
     this.state = { text: '' };
   }
