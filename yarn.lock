@@ -1285,6 +1285,11 @@ balanced-match@^1.0.0:
   resolved "http://registry.npm.taobao.org/balanced-match/download/balanced-match-1.0.0.tgz#89b4d199ab2bee49de164ea02b89ce462d71b767"
   integrity sha1-ibTRmasr7kneFk6gK4nORi1xt2c=
 
+base-64@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.npm.taobao.org/base-64/download/base-64-0.1.0.tgz#780a99c84e7d600260361511c4877613bf24f6bb"
+  integrity sha1-eAqZyE59YAJgNhURxId2E78k9rs=
+
 base64-js@1.1.2:
   version "1.1.2"
   resolved "http://registry.npm.taobao.org/base64-js/download/base64-js-1.1.2.tgz#d6400cac1c4c660976d90d07a04351d89395f5e8"
@@ -2045,7 +2050,7 @@ escodegen@^1.9.1:
 
 eslint-plugin-react@^7.12.4:
   version "7.12.4"
-  resolved "http://registry.npm.taobao.org/eslint-plugin-react/download/eslint-plugin-react-7.12.4.tgz#b1ecf26479d61aee650da612e425c53a99f48c8c"
+  resolved "https://registry.npm.taobao.org/eslint-plugin-react/download/eslint-plugin-react-7.12.4.tgz#b1ecf26479d61aee650da612e425c53a99f48c8c"
   integrity sha1-sezyZHnWGu5lDaYS5CXFOpn0jIw=
   dependencies:
     array-includes "^3.0.3"
@@ -5197,6 +5202,14 @@ react-native-camera@^2.2.2:
   dependencies:
     prop-types "^15.6.2"
 
+react-native-fs@^2.13.3:
+  version "2.13.3"
+  resolved "https://registry.npm.taobao.org/react-native-fs/download/react-native-fs-2.13.3.tgz#a422f0ecd8a093a7e99d8d51ff51440e090a18a8"
+  integrity sha1-pCLw7Nigk6fpnY1R/1FEDgkKGKg=
+  dependencies:
+    base-64 "^0.1.0"
+    utf8 "^2.1.1"
+
 react-native-gesture-handler@^1.1.0:
   version "1.1.0"
   resolved "http://registry.npm.taobao.org/react-native-gesture-handler/download/react-native-gesture-handler-1.1.0.tgz#2a7d545ad2e0ca23adce22b2af441ad360ecccee"
@@ -6471,6 +6484,11 @@ use@^3.1.0:
   version "3.1.1"
   resolved "http://registry.npm.taobao.org/use/download/use-3.1.1.tgz#d50c8cac79a19fbc20f2911f56eb973f4e10070f"
   integrity sha1-1QyMrHmhn7wg8pEfVuuXP04QBw8=
+
+utf8@^2.1.1:
+  version "2.1.2"
+  resolved "https://registry.npm.taobao.org/utf8/download/utf8-2.1.2.tgz#1fa0d9270e9be850d9b05027f63519bf46457d96"
+  integrity sha1-H6DZJw6b6FDZsFAn9jUZv0ZFfZY=
 
 util-deprecate@~1.0.1:
   version "1.0.2"

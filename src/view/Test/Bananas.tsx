@@ -52,6 +52,8 @@ export default class Bananas extends Component<BananaProps, BananaState> {
         <TouchableNativeFeedback
           onPress={this._onPressButton}
           onLongPress={this._onLongPressButton}
+          onPressIn={this._onPressButton}
+          onPressOut={this._onPressButton}
         >
           <View>
             <Text style={styles.bigBlue}>水光潋滟晴方好</Text>

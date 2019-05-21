@@ -14,6 +14,9 @@
 4.  官方推荐用snack.expo
 5.  调试工具react-native-debugger，可以看页面元素,网络请求,和redux或mobx的数据流
     exe启动,安装目录E:\InstallFiles\rn-debugger-windows-ia32
+6.无线调试 adb connect 手机ip
+          adb tcpip 5555
+          dev settings 配置pc端ip和8081端口
 引入typescript
   全局安装包 yarn add --dev react-native-typescript-transformer typescript
   添加rn-cli.config.js
@@ -38,6 +41,7 @@ react Navigation
   react-native link react-native-gesture-handler
   mainActivity.java复制代码(按照官网)
   app.tsx引入使用
+  screen是作为一个路由栈来使用??
 react-native-camera实现二维码
   yarn add react-native-camera
   react-native link react-native-camera
@@ -67,12 +71,27 @@ react-native-vector-icons
     d. import Myicon from 'react-native-vector-icons/iconfont';
     <Myicon name="clock" size={30} color="#900" /> 
     e. 生成iconfont.json的node脚本G:\webspace\clown\nodeJsFile\buildFontJson.js
-react-native-fs
-  本地文件系统访问
+react-native-fs(本地文件系统访问)
+  demo: https://github.com/cjdell/react-native-fs-test
 关于global全局变量的注入和引用的
-
-
 样式Number数值
   在 React-Native 中，目前仅支持 Number 这一种长度取值。默认缺省了 pt 单位
+手势触控系统
+	1. longPress,pressIn,pressOut
+	2. 
+	View.props.onStartShouldSetResponder: (evt) => true
+	View.props.onMoveShouldSetResponder: (evt) => true
+	View.props.onResponderGrant: (evt) => {}
+	View.props.onResponderReject: (evt) => {}
+	
+	View.props.onResponderMove: (evt) => {} - 用户正在屏幕上移动手指时（没有停下也没有离开屏幕）。
+	View.props.onResponderRelease: (evt) => {} - 触摸操作结束时触发，比如"touchUp"（手指抬起离开屏幕）。
+	View.props.onResponderTerminationRequest: (evt) => true - 有其他组件请求接替响应者，当前的 View 是否“放权”？返回 true 的话则释放响应者权力。
+	View.props.onResponderTerminate: (evt) => {}  - 响应者权力已经交出。这可能是由于其他 View 通过onResponderTerminationRequest请求的，
+也可能是由操作系统强制夺权（比如 iOS 上的控制中心或是通知中心）
+	3. PanResponder类用于实现多点触摸
 
 rn的热更新实现
+
+安装过程出现问题
+  build.gradle构建依赖使用compilie过时，建议换成implementation或api

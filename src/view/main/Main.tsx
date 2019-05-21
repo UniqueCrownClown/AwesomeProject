@@ -55,7 +55,8 @@ export default class Main extends Component<IMainProps, IMainState> {
     { text: 'Scan', source: require('./../../asserts/images/icon-3.png'), link: 'ScanScreen' }]
   private linkData2: Array<any> =
     [{ text: 'ModalTest', source: require('./../../asserts/images/icon-1.png'), link: 'ModalExample' },
-    { text: 'RNModal', source: require('./../../asserts/images/icon-3.png'), link: 'RNModal' }]
+    { text: 'RNModal', source: require('./../../asserts/images/icon-2.png'), link: 'RNModal' },
+    { text: 'demoReact', source: require('./../../asserts/images/icon-2.png'), link: 'demoReact' }]
 
 
   public render() {

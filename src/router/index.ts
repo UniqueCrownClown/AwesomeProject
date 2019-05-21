@@ -1,4 +1,4 @@
-import Flex from './../view/Test/Flex';
+import TestFs from '../view/Test/TestFs';
 import Bananas from './../view/Test/Bananas';
 import FilmList from './../view/Test/FilmList';
 import ButtonList from './../view/Test/ButtonList';
@@ -11,16 +11,18 @@ import Toe from './../view/toe/Toe';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import Example from '../view/Test/Modal/example';
 import { tabNavigator } from './MyTabNavigator';
+import demoReact from '../view/Test/demoReact';
 
 const RootStack = createStackNavigator(
   {
     FilmList: FilmList,
     Bananas: Bananas,
-    Flex: Flex,
+    Flex: TestFs,
     TestFlatList: TestFlatList,
     ButtonList: ButtonList,
     ScanScreen: ScanScreen,
     Toe: Toe,
+    demoReact:demoReact,
     Login: { screen: LoginPage },
     Main: { screen: MainPage },
     Home: { screen: tabNavigator },
@@ -28,7 +30,7 @@ const RootStack = createStackNavigator(
     RNModal: { screen: Example }
   },
   {
-    initialRouteName: 'Home',
+    initialRouteName: 'Flex',
     defaultNavigationOptions: {
       headerStyle: {
         backgroundColor: '#137BFE',
