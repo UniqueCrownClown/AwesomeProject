@@ -5195,10 +5195,10 @@ react-native-animatable@^1.2.4:
   dependencies:
     prop-types "^15.5.10"
 
-react-native-camera@^2.2.2:
-  version "2.2.2"
-  resolved "http://registry.npm.taobao.org/react-native-camera/download/react-native-camera-2.2.2.tgz#2636e3ec681aef5a786ae7856820ee64e59fa060"
-  integrity sha1-Jjbj7Gga71p4aueFaCDuZOWfoGA=
+react-native-camera@^2.10.0:
+  version "2.10.0"
+  resolved "https://registry.npm.taobao.org/react-native-camera/download/react-native-camera-2.10.0.tgz#0b2f2f0e625ac2b936088e70884fff0d679da264"
+  integrity sha1-Cy8vDmJawrk2CI5wiE//DWedomQ=
   dependencies:
     prop-types "^15.6.2"
 

@@ -95,3 +95,17 @@ rn的热更新实现
 
 安装过程出现问题
   build.gradle构建依赖使用compilie过时，建议换成implementation或api
+
+ble蓝牙插件
+yarn add react-native-ble-manager
+
+react-native link react-native-ble-manager
+
+hoc
+  实现的高阶组件的方法有两种
+    1. 属性代理。函数通过返回包裹原组件来添加额外功能。
+    2. 反向继承。函数通过返回继承原组件来控制render
+avd Manager(sdk自带模拟器)
+	1. 在sdk的emulator目录打开命令行工具
+	2. android list avd命令查看AVD设备的信息
+	3. 启动avd命令:emulator -avd AVD名

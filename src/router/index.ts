@@ -22,7 +22,7 @@ const RootStack = createStackNavigator(
     ButtonList: ButtonList,
     ScanScreen: ScanScreen,
     Toe: Toe,
-    demoReact:demoReact,
+    demoReact: demoReact,
     Login: { screen: LoginPage },
     Main: { screen: MainPage },
     Home: { screen: tabNavigator },
@@ -30,7 +30,7 @@ const RootStack = createStackNavigator(
     RNModal: { screen: Example }
   },
   {
-    initialRouteName: 'Flex',
+    initialRouteName: 'Home',
     defaultNavigationOptions: {
       headerStyle: {
         backgroundColor: '#137BFE',

@@ -1,0 +1,69 @@
+只要组件的props或state发生改变,组件就会执行 render 函数进行重新渲染
+除非你重写 shouldComponentUpdate 周期函数通过返回 false 来阻止这件事的发生；又或者直接让组件直接继承 PureComponent
+父组建re-render导致子组件re-render,可能state和props的值没改变,性能浪费
+处理方法:pureRender
+immutable的使用价值
+  1. 简介
+    shallowCopy（浅拷贝）或 deepCopy（深拷贝)
+    使用 Immutable.is 来减少 React 重复渲染，提高性能
+    immutable对react的侵入需要转化所有的原生js解构成为Immutable,,
+    除了向服务端发送数据请求的时候，其他位置，不允许出现toJS的代码
+  2. 基本使用
+    ```
+    import Immutable from 'immutable';
+    const map =new Map<number,string>();
+    map.set(1,'dadada');
+    let imap = Immutable.fromJS(map); //imap为Immutable对象
+    let omap = imap.toJs(); //将Immutable数据转换为原生JS
+    method:
+    set(),
+    setIn(),//深度赋值
+    get(),
+    getIn() //深度取值
+    isImmutable() //判断是否为Immutable对象
+    Immutable.is(map1, map2)//对象是否相等，非引用地址比对，值比对
+    ```
+
+  PureComponent
+    Stateless Component
+    无状态组件不维护自己的状态，只有render函数
+    shouldComponentUpdate的处理实现不重复渲染
+
+  redux
+    reducer纯函数
+性能优化小Tips
+  1. 方法的bind一律置于constructor,而不是在render中去bind(this),避免每次渲染都要重复执行一次
+  2. 
+
+  vue和react的state修改触发渲染不同
+    1. vue靶向修改不触发父组件的重新渲染
+    2. 父组件的state改变触发所有子组件的重新render
+        子组件的state触发父组件的渲染？
+修改打包包名, 修改应用名称, 修改应用icon和设置背景图
+  android/app/build.gradle
+  defaultConfig
+  android/app/src/main/res/values/strings.xml
+  修改mipmap-hdpi文件里的图标
+React中调用setState之后发生了什么事情?
+  将当前传入的参数对象与组件当前的状态合并,然后触发调和过程,
+  在调和的过程中,React会以相对高效的方式根据新的状态构建React元素树并且重新渲染整个UI界面
+  React得到的元素树之后,React会自动计算出新的树与老的树的节点的差异,然后根据差异对界面进行最小化的渲染,
+  在React的差异算法中,React能够精确的知道在哪些位置发生看改变以及应该如何去改变,
+  这样就保证了UI是按需更新的而不是重新渲染整个界面.
+
+React的extends
+  如果是抽象类的话可以做成继承，如果是2个实际都会被使用到的组件的话，
+  尽量不要去用继承的方式，而是拆分成更小的组件，用fb推荐的高阶组件的方式去做
+React生命周期
+  1. 组件initialization ==> constructor()
+  2. Mounting阶段 ==> componentWillMount,
+                  render,
+                  componentDidMount
+  3. update阶段 ==> componentWillReceiveProps(nextProps, nextState)
+                    shouldComponentUpdate(nextProps, nextState)
+                    componentWillUpdate(nextProps, nextState)
+                    render
+                    componentDidUpdate(nextProps, nextState)
+            a. 直接使用,每当父组件重新render导致的重传props，子组件将直接跟着重新渲染，无论props是否有变化。
+            可通过shouldComponentUpdate方法优化。
+            b.在componentWillReceiveProps方法中，将props转换成自己的state(在这种需求下省去重传prop导致的二次render)
